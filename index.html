@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asuntos Sociales - Presidencia Panamá</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2563eb" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <nav class="bg-blue-900 text-white p-4 shadow flex justify-between items-center">
+    <h1 class="text-xl font-bold">Asuntos Sociales</h1>
+    <div class="space-x-4">
+      <a href="#login" class="hover:underline">Acceso</a>
+      <a href="#formulario" class="hover:underline">Registrar caso</a>
+    </div>
+  </nav>
+
+  <!-- LOGIN -->
+  <section id="login" class="p-6">
+    <div class="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Inicio de Sesión</h2>
+      <form id="loginForm" class="space-y-4">
+        <input type="email" placeholder="Correo electrónico" class="w-full p-3 border rounded-xl" required />
+        <input type="password" placeholder="Contraseña" class="w-full p-3 border rounded-xl" required />
+        <button type="submit" class="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-xl w-full">Ingresar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE REGISTRO DE CASOS -->
+  <section id="formulario" class="p-6">
+    <div class="bg-white p-6 rounded-xl shadow-lg max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Registrar un caso</h2>
+      <form id="casoForm" class="space-y-4">
+        <input type="text" placeholder="Nombre del solicitante" class="w-full p-3 border rounded-xl" required />
+        <input type="text" placeholder="Ubicación" class="w-full p-3 border rounded-xl" required />
+        <textarea placeholder="Descripción del caso" class="w-full p-3 border rounded-xl" required></textarea>
+        <button type="submit" class="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded-xl w-full">Enviar caso</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center bg-gray-800 text-white p-4 mt-10">
+    © 2025 Oficina de Asuntos Sociales - Presidencia Panamá
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Inicio de sesión simulado.');
+    });
+
+    document.getElementById('casoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Caso registrado (simulado). En versión real, se guardaría en base de datos.');
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
